@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Job Progress Help Guide</title>
+	<!-- Angular Material CSS now available via Google CDN; version 0.11.2 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div ng-controller="AppCtrl" layout="column" style="height:100%;" ng-cloak>
+	  <section layout="row" flex>
+	    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	      <md-toolbar class="md-whiteframe-glow-z1 logo-container">
+	        <div class="jp-logo"><img src="http://www.jobprogress.com/wp-content/themes/jobprogress/images/logo.png" alt="Jobprogress"></div>
+	      </md-toolbar>
+	      <md-content layout-column ng-controller="LeftCtrl" role="navigation">
+	      	<div id='cssmenu'>
+				<ul>
+				   <li>
+				   		<md-button ng-href="">GET STARTED</md-button>
+				   </li>
+				   <li class='active has-sub'><md-button ng-href="">CONFIGURATION</md-button>
+				      <ul>
+				         <li class='has-sub'><md-button ng-href="">PROFILE</md-button>
+				         </li>
+				         <li class='has-sub'><md-button ng-href="">WORKFLOW</md-button>
+				         </li>
+				      </ul>
+				   </li>
+				   <li><md-button ng-href="">OVERVIEW</md-button></li>
+				   <li><md-button ng-href="">FAQs</md-button></li>
+				</ul>
+			</div>
+	        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+	          Close Sidenav Left
+	        </md-button>
+	      </md-content>
+	    </md-sidenav>
+	  	<div flex>
+	      	<md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar">
+		    	<h2>Configuration <span class="fa fa-chevron-right"></span> Profile</h2>
+		    </md-toolbar>
+		    <md-content class="content-container" flex layout-padding>
+		      	<div layout="column" layout-fill layout-align="top center">
+			        <h3>MY PROFILE</h3>
+			        <p>My Profile lets you view your personal and company details that you entered while signing up for the Job Progress Account as an admin. The steps below explain the various functionalities present on this page. <br><br></p>
+			        <section class="demo-container md-whiteframe-z1">
+			        	<md-toolbar class="md-whiteframe-glow-z1 md-primary">
+	        				<div class="md-toolbar-tools">
+	        					<h5>How do I link my Google Account to Job Progress?</h5>
+	        				</div>
+	      				</md-toolbar>
+	      				<div class="demo-content cardDemo1">
+	      					<ul>
+	      						<li>Go to Settings, click on My Profile from the left panel.</li>
+	      						<li>This page displays yours and your company details. Recent Activity on the same page displays all of your recent activities you've performed.</li>
+	      						<li>In order to edit your profile, click on Edit Profile button. You can change your Personal Details, Login Details and Address from this section.</li>
+	      						<li>Connect New Google Account Button allows you to connect your account to any of your Google Account. On clicking this button, you'll be taken to Google Sign In, enter your login details and click on Allow button to allow Job Progress to access your Google account. </li>
+	      						<li>In case you wish to upload your photo, click on Upload Photo and select a photo from your PC and click on Open.  </li>
+	      						<li>Once you've made the changes, hit Save.</li>
+	      					</ul>
+	      				</div>
+			        </section>
+			        <h3><br>COMPANY PROFILE</h3>
+			       	<p>Company Profile lets you view and edit your company details, your personal details, along with a list of all users giving you the option to add new users. The steps below explain the various functionalities present on this page.</p>
+			       	<ul>
+			       		<li>Go to Settings, click on Company Profile from the left panel.</li>
+			       		<li>This page displays your Company details such as Address, Phone, Email, Subscriber Id etc. and your own details (Name, Address, and Email) as well.</li>
+			       		<li>The 'Users' section on the same page displays the list of users associated to your company. In order to add a new user, hit Add User.</li>
+			       		<li>'Add New Users' screen will be displayed. Enter the user's personal details, login details and address. </li>
+			       		<li>On entering the respective details, hit Save User. A new user will be added to the Users list.</li>
+			       		<br>
+			       	</ul>
+			        <section class="demo-container md-whiteframe-z1">
+			        	<md-toolbar class="md-whiteframe-glow-z1 md-primary">
+	        				<div class="md-toolbar-tools">
+	        					<h5>How to use Recent Company File(s)?</h5>
+	        				</div>
+	      				</md-toolbar>
+	      				<div class="demo-content cardDemo1">
+	      					<p>Recent Company Files lets you upload files associated to your company. This helps you keep a record of your important company files and they become easily accessible.</p>
+	      					<ul>
+	      						<li>Go to Settings, select Company Profile.  Scroll down and go to 'Recent Company File(s)' section.</li>
+	      						<li>The 'Recent Company File(s)' section on this page displays the list of all your recent company files that you may have uploaded.</li>
+	      						<li>In order to upload a file, click on View All, you'll see 'Upload New File', click on it and browse the file you need to upload from your PC.</li>
+	      						<li>In order to create a directory, hit Create Directory which is on the right side of the same screen. Enter Directory Name and click on Create. A new directory will be created, click on it and it'll let you upload new files from your PC. This option helps you categorize your files and better manage your documents.</li>
+	      					</ul>
+	      				</div>
+			        </section>
+			        <div class="help-spacer"></div>
+			        <section class="demo-container md-whiteframe-z1">
+			        	<md-toolbar class="md-whiteframe-glow-z1 md-primary">
+	        				<div class="md-toolbar-tools">
+	        					<h5>How to edit your Company Profile?</h5>
+	        				</div>
+	      				</md-toolbar>
+	      				<div class="demo-content cardDemo1">
+	      					<p>In order to update your company's details, you can edit your company profile by following the steps below:</p>
+	      					<ul>
+	      						<li>Go to Settings, select Company Profile.  </li>
+	      						<li>In order to edit your profile, click on Edit Profile button. You can change your Company Details, Office Address from this section. Once edited, click on Update Profile to save the changes.</li>
+	      					</ul>
+	      				</div>
+			        </section>
+			        <div class="help-spacer"></div>
+		        	<div>
+		          		<md-button ng-click="toggleLeft()"
+			            class="md-primary" hide-gt-md>
+			            	Toggle left
+			          	</md-button>
+		        	</div>
+		      	</div>
+		      <!-- <div flex></div> -->
+		    </md-content>
+		</div>
+	  </section>
+	</div>
+	 <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.11.2 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+    <script type="text/javascript">
+    	angular.module('myApp', ['ngMaterial'])
+		.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+		    $scope.toggleLeft = buildDelayedToggler('left');
+		    $scope.toggleRight = buildToggler('right');
+		    $scope.isOpenRight = function(){
+		      return $mdSidenav('right').isOpen();
+		    };
+		    /**
+		     * Supplies a function that will continue to operate until the
+		     * time is up.
+		     */
+		    function debounce(func, wait, context) {
+		      var timer;
+		      return function debounced() {
+		        var context = $scope,
+		            args = Array.prototype.slice.call(arguments);
+		        $timeout.cancel(timer);
+		        timer = $timeout(function() {
+		          timer = undefined;
+		          func.apply(context, args);
+		        }, wait || 10);
+		      };
+		    }
+		    /**
+		     * Build handler to open/close a SideNav; when animation finishes
+		     * report completion in console
+		     */
+		    function buildDelayedToggler(navID) {
+		      return debounce(function() {
+		        $mdSidenav(navID)
+		          .toggle()
+		          .then(function () {
+		            $log.debug("toggle " + navID + " is done");
+		          });
+		      }, 200);
+		    }
+		    function buildToggler(navID) {
+		      return function() {
+		        $mdSidenav(navID)
+		          .toggle()
+		          .then(function () {
+		            $log.debug("toggle " + navID + " is done");
+		          });
+		      }
+		    }
+		  })
+		  .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+		    $scope.close = function () {
+		      $mdSidenav('left').close()
+		        .then(function () {
+		          $log.debug("close LEFT is done");
+		        });
+		    };
+		  })
+    </script>
+</body>
+</html>
